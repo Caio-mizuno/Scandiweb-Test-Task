@@ -21,7 +21,7 @@ class ProductList{
        
        $products = $this->productRepository->findAll();
        
-       require './productList.php';
+       require './View/productList.php';
        ?>
             
        <div class="container flex flex-wrap" >
@@ -40,10 +40,7 @@ class ProductList{
                     $item->getHeight(),
                     $item->getWidth(),
                     $item->getLenght()
-                );
-                
-                $arrayBox[] = $item->getId();
-                
+                );                
             }
             
         

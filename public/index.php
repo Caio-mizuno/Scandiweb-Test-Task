@@ -4,14 +4,14 @@ require __DIR__ . '/../vendor/autoload.php';
 
 use Caiom\Task\Controller\ProductList;
 use Caiom\Task\Controller\addDtProduct;
+use Caiom\Task\Controller\deleteProduct;
 
 switch ($_SERVER['PATH_INFO']){
         
         case '/addPage':
-            require 'addPage.php';
+            require './View/addPage.php';
             break;
         case '/productList':
-            // require 'productList.php';
             $controller = new ProductList();
             $controller->requestProcess();
             break;    
@@ -19,7 +19,10 @@ switch ($_SERVER['PATH_INFO']){
             $controller = new addDtProduct();
             $controller->requestProcess();
             break;
-        
+        case '/deleteProduct':
+            $controller = new deleteProduct();
+            $controller->deleteApi();
+            break;
         default:
             echo "ERROR 404";
             break;

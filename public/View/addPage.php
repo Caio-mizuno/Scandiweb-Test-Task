@@ -3,7 +3,7 @@
 <html lang="en">
 
 <?php
-require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../../vendor/autoload.php';
 require_once('..\src\components\head.php');
 
 ?>

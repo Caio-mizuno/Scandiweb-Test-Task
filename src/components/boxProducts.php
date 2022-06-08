@@ -1,7 +1,7 @@
 <?php
 namespace Caiom\Task\Components;
 require __DIR__ . '/../../vendor/autoload.php';
-use Caiom\Task\Controller\deleteDtProduct;
+
 class Box{
 
     public int $id;
@@ -27,14 +27,9 @@ class Box{
                             }
                             ?>
                     </p>
-                    <label class="py-2" id="id-p" name="id-product" value="<?php echo $id;?>"><?php echo $id;?></label>
                 </div>
             </div>
         <?php
     }
-    public function deleteBox($id){
-        $controller = new deleteDtProduct();
-        $controller->requestProcess($id);
-    
-    }  
+     
 }
