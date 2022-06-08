@@ -1,0 +1,20 @@
+{
+    "name": "caiom/task",
+    "autoload": {
+        "psr-4": {
+            "Caiom\\Task\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Caio Vinicius Albertinazi Mizuno",
+            "email": "caiomizuninho@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.12",
+        "symfony/cache": "^6.1",
+        "doctrine/annotations": "^1.13",
+        "ramsey/uuid-doctrine": "^1.8"
+    }
+}
