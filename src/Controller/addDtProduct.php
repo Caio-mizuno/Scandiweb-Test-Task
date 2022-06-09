@@ -8,15 +8,19 @@ use Caiom\Task\EntityProduct\EntityManagerCreator;
 class addDtProduct{
     
     private $entityManager;
+    private $productRepository;
     public function __construct()
     {   
         
         $this->entityManager = (new EntityManagerCreator())
             ->getEntityManager();
+            $this->productRepository = $this->entityManager
+            ->getRepository(Product::class);
     }
         
     public function requestProcess()
     {
+        //SETTING INPUTS OF THE FORM
         $sku = filter_input(INPUT_POST,'sku',FILTER_SANITIZE_STRING);
         $name = filter_input(INPUT_POST,'name',FILTER_SANITIZE_STRING);
         $price = filter_input(INPUT_POST,'price',FILTER_VALIDATE_INT);
@@ -34,13 +38,28 @@ class addDtProduct{
         }else{
             $product_type = 3;
         }
+        //---------------------------------------------------------------
+        //VALIDATE OF DUPLICATES
+        $allProducts = $this->productRepository->findAll();
+        foreach($allProducts as $item)
+        {
+            //SKU INPUT
+            if($item->getSku() == $sku)
+            {
+                $msg = urlencode('Invalid input, duplicate Sku! Please, insert new Sku!');
+                header('Location: /addPage?Message='.$msg,true,302);
+            }
+        }
 
+        //CREATING A OBJECT
         $product = new Product($sku, $name,$price,$product_type,
         $size,$weight,$height,$width,$lenght);
-
+        //CREATING IN DATABASE
         $this->entityManager->persist($product);
         $this->entityManager->flush();
 
         header('Location: /productList',true,302);
+        
+        
     }
 }
