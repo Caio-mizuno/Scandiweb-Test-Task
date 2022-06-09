@@ -24,7 +24,7 @@ switch ($_SERVER['PATH_INFO']){
             $controller->deleteApi();
             break;
         default:
-            echo "ERROR 404";
+            http_response_code(404);
             break;
     }
 ?>
