@@ -6,7 +6,7 @@ console.log('script working')
 function deleteAjax(id){
     $.ajax({
         type:'post',
-        url:"/deleteProduct",
+        url:"./deleteProduct",
         data:{delete_id:id},
         success:function(){
             document.location.reload(true);

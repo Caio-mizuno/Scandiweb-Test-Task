@@ -15,5 +15,5 @@
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <title>Document</title>
+    <title>Product List</title>
 </head>

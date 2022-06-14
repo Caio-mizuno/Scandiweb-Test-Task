@@ -11,7 +11,7 @@ require_once('..\src\components\head.php');
 <body>
 
     <div id="product_form" class="conatiner" style="position:absolute;top:0;width:100%;">
-        <form action="/saveProduct" method="post">
+        <form action="./saveProduct" method="post">
             <?php
             require_once('..\src\components\navbarAddPage.php');
             if (isset($_GET['Message'])) {

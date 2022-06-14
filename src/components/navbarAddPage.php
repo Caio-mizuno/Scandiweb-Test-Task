@@ -12,7 +12,7 @@
                     Save</button>
                 </li>
                 <li class="nav-item">
-                    <a  class="nav-link active btn  border-2 mx-4" style="color:#c91d1d;border-color:#c91d1d;" aria-current="page" href="/productList">Cancel</a>
+                    <a  class="nav-link active btn  border-2 mx-4" style="color:#c91d1d;border-color:#c91d1d;" aria-current="page" href="./productList">Cancel</a>
                 </li>
             </ul>
         </div>
