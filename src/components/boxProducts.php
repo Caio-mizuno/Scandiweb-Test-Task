@@ -1,8 +1,8 @@
 <?php
-namespace Caiom\Task\Components;
+namespace Task\Components;
 require __DIR__ . '/../../vendor/autoload.php';
 
-class Box{
+class boxProducts{
 
     public int $id;
 

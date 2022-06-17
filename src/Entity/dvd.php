@@ -1,5 +1,5 @@
 <?php
-namespace Caiom\Task\Entity;
+namespace Task\Entity;
 class dvd{
     private int $size;
     function __construct()

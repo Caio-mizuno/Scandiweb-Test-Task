@@ -2,9 +2,9 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use Caiom\Task\Controller\ProductList;
-use Caiom\Task\Controller\addDtProduct;
-use Caiom\Task\Controller\deleteProduct;
+use Task\Controller\ProductList;
+use Task\Controller\addDtProduct;
+use Task\Controller\deleteProduct;
 
 switch ($_SERVER['PATH_INFO']){
         

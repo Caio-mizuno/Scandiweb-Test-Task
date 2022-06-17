@@ -1,5 +1,5 @@
 <?php
-namespace Caiom\Task\Entity;
+namespace Task\Entity;
 class book{
     private float $weight;
 

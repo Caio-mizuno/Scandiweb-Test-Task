@@ -1,5 +1,5 @@
 <?php
-namespace Caiom\Task\EntityProduct;
+namespace Task\EntityProduct;
 require_once __DIR__ . '/../../vendor/autoload.php';
 use \Doctrine\ORM\EntityManager;
 use \Doctrine\ORM\EntityManagerInterface;
@@ -13,7 +13,7 @@ class EntityManagerCreator
         
         $isDevMode = false;
 
-        $dbParams = array(
+         $dbParams = array(
             'driver' => 'pdo_mysql',
             'user' => 'root',
             'passwords' => '',
@@ -21,14 +21,6 @@ class EntityManagerCreator
             'host' => 'localhost',
             'port' => '3306'
         );
-        /* $dbParams = array(
-            'driver' => 'pdo_mysql',
-            'user' => 'id19106976_root',
-            'passwords' => 'AB=SV7&$Sim?m52Y',
-            'dbname' => 'id19106976_product_list',
-            'host' => 'localhost',
-            'port' => '3306'
-        );*/
 
         $config = Setup::createAnnotationMetadataConfiguration(
             $paths,$isDevMode,null,null,false

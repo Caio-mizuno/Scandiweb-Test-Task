@@ -1,5 +1,5 @@
 <?php
-namespace Caiom\Task\Entity;
+namespace Task\Entity;
 class furniture{
     private float $height;
     private float $width;

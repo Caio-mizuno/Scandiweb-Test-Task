@@ -1,10 +1,10 @@
 <?php
-namespace Caiom\Task\Entity;
+namespace Task\Entity;
 require __DIR__ . '/../../vendor/autoload.php';
 use Doctrine\ORM\Mapping as ORM;
-use Caiom\Task\Entity\dvd as dvd;
-use Caiom\Task\Entity\book as book;
-use Caiom\Task\Entity\furniture as furniture;
+use Task\Entity\dvd as dvd;
+use Task\Entity\book as book;
+use Task\Entity\furniture as furniture;
 
 
 /**

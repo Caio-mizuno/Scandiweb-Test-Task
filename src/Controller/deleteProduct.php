@@ -1,10 +1,10 @@
 <?php
-namespace Caiom\Task\Controller;
+namespace Task\Controller;
 require __DIR__ . '/../../vendor/autoload.php';
 //require __DIR__ . '/../vendor/autoload.php';
 
-use Caiom\Task\Entity\Product;
-use Caiom\Task\EntityProduct\EntityManagerCreator;
+use Task\Entity\Product;
+use Task\EntityProduct\EntityManagerCreator;
 
 class deleteProduct{
     public function deleteAPI()

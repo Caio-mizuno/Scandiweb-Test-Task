@@ -1,8 +1,8 @@
 {
-    "name": "caiom/task",
+   
     "autoload": {
         "psr-4": {
-            "Caiom\\Task\\": "src/"
+            "Task\\": ["src/"]
         }
     },
     "authors": [
@@ -12,14 +12,13 @@
         }
     ],
     "require": {
-        "php": "~8.0||<8",
         "doctrine/orm": "^2.12",
-        "symfony/cache": "5.4.9",
-        "symfony/console": "5.4.9",
-        "symfony/var-exporter":"5.4.9",
-        "symfony/string":"5.4.9",
-        "symfony/deprecation-contracts": "2.5.1",
-        "symfony/service-contracts":"2.5.1",
+        "symfony/cache": "6.1.1",
+        "symfony/console": "6.1.1",
+        "symfony/var-exporter":"6.1.1",
+        "symfony/string":"6.1.0",
+        "symfony/deprecation-contracts": "3.1",
+        "symfony/service-contracts":"3.1",
         "doctrine/annotations": "^1.13",
         "ramsey/uuid-doctrine": "^1.8"
     }

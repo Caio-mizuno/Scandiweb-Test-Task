@@ -1,10 +1,10 @@
 <?php
-namespace Caiom\Task\Controller;
+namespace Task\Controller;
 require __DIR__ . '/../../vendor/autoload.php';
 
-use Caiom\Task\EntityProduct\EntityManagerCreator;
-use Caiom\Task\Entity\Product;
-use Caiom\Task\Components\Box;
+use Task\EntityProduct\EntityManagerCreator;
+use Task\Entity\Product;
+use Task\Components\boxProducts;
 class ProductList{
     private $productRepository;
     public function __construct()
@@ -28,7 +28,7 @@ class ProductList{
         <?php
             foreach ($products as $item)
             {
-                $box = new Box;
+                $box = new boxProducts;
                 $box->createBox(
                     $item->getId(),
                     $item->getSku(),
