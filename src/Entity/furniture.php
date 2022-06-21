@@ -1,32 +1,58 @@
 <?php
 namespace Task\Entity;
-class furniture{
-    private float $height;
-    private float $width;
-    private float $lenght;
-    function __construct()
+
+require __DIR__ . '/../../vendor/autoload.php';
+
+use Doctrine\ORM\Mapping as ORM;
+use Task\Entity\Product;
+/**
+ * @ORM\Entity
+ * @ORM\Table(name="products")
+ */
+class Furniture extends Product{
+   /**
+     * @ORM\Column(type="float")
+     */
+    public ?float $height = 0;
+     /**
+     * @ORM\Column(type="float")
+     */
+    public ?float $width = 0;
+     /**
+     * @ORM\Column(type="float")
+     */
+    public ?float $lenght = 0;
+    public function __construct($sku,$name,$price,$product_type,$height,$width,$lenght)
     {
-        
+        $this->sku = $sku;
+        $this->name = $name;
+        $this->price = $price;
+        $this->product_type = $product_type;
+        $this->height = $height;
+        $this->width = $width;
+        $this->lenght = $lenght;
+        $this->weight = 0;
+        $this->size = 0;
     }
     
-    function getHeight(){
+    public function getHeight():float{
         return $this->height;
     }
-    function getWidth(){
+    public function getWidth():float{
         return $this->width;
     }
-    function getLenght(){
+    public function getLenght():float{
         return $this->lenght;
     }
-    function setHeight($height)
+    public function setHeight($height):void
     {
         $this->height = $height;
     }
-    function setWidth($width)
+    public function setWidth($width):void
     {
         $this->width = $width;
     }
-    function setLenght($lenght)
+    public function setLenght($lenght):void
     {
         $this->lenght = $lenght;
     }

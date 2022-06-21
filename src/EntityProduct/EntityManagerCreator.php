@@ -9,15 +9,20 @@ class EntityManagerCreator
 {
     public function getEntityManager():EntityManagerInterface
     {
-        $paths = [__DIR__.'/../../Entity'];
         
-        $isDevMode = false;
-
+        define("PATH",getcwd());
+        $path = str_replace("/public_html","/public_html/src/Entity/",PATH);
+        
+        $paths = [$path];
+        
+        
+        $isDevMode = true;
+        
          $dbParams = array(
-            'driver' => 'pdo_mysql',
-            'user' => 'root',
-            'passwords' => '',
-            'dbname' => 'product_list',
+            'driver' => 'mysqli',
+            'user' => 'u783589280_user_root',
+            'password' => 'Aa-9071996@C',
+            'dbname' => 'u783589280_product_list',
             'host' => 'localhost',
             'port' => '3306'
         );
@@ -25,6 +30,7 @@ class EntityManagerCreator
         $config = Setup::createAnnotationMetadataConfiguration(
             $paths,$isDevMode,null,null,false
         );
+        
         return EntityManager::create($dbParams, $config);
     }
 }

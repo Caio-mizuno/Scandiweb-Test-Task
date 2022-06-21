@@ -1,6 +1,9 @@
 <?php
 namespace Task\Components;
-require __DIR__ . '/../../vendor/autoload.php';
+
+define("dirBox",__DIR__);
+$path = str_replace("src/components","vendor/autoload.php",dirBox);
+require $path;
 
 class boxProducts{
 

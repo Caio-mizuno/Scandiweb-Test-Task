@@ -7,6 +7,7 @@ use Task\Entity\Product;
 use Task\Components\boxProducts;
 class ProductList{
     private $productRepository;
+    
     public function __construct()
     {   
         
@@ -21,7 +22,11 @@ class ProductList{
        
        $products = $this->productRepository->findAll();
        
-       require './View/productList.php';
+       if ($_SERVER['SCRIPT_URL'] == "/"){
+            $path = str_replace('src/Controller','/View/productList.php',__DIR__);
+            require $path;
+       }
+       else require './View/productList.php';
        ?>
             
        <div class="container flex flex-wrap" >
@@ -47,6 +52,8 @@ class ProductList{
         ?>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        
+        
         <script src=".\js\deleteScript.js"></script>
         
             <?php

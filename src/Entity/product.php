@@ -1,18 +1,16 @@
 <?php
 namespace Task\Entity;
+
 require __DIR__ . '/../../vendor/autoload.php';
+
 use Doctrine\ORM\Mapping as ORM;
-use Task\Entity\dvd as dvd;
-use Task\Entity\book as book;
-use Task\Entity\furniture as furniture;
 
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="product")
+ * @ORM\Table(name="products")
  */
-class Product
-{
+class Product{
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -63,27 +61,14 @@ class Product
         $this->name = $name;
         $this->price = $price;
         $this->product_type = $product_type;
-        if($size){
-            $dvd = new dvd();
-            $dvd->setSize($size);
-            $this->size = $dvd->getSize();
-        }
-        if($weight){
-            $book = new book();
-            $book->setWeight($weight);
-            $this->weight = $book->getWeight();
-        }
-        if($height && $width && $lenght){
-            $furniture = new furniture();
-            $furniture->setHeight($height);
-            $furniture->setWidth($width);
-            $furniture->setLenght($lenght);
-            $this->height = $furniture->getHeight();
-            $this->width = $furniture->getWidth();
-            $this->lenght = $furniture->getLenght();
-        }
+        $this->size = $size;
+        $this->weight = $weight;
+        $this->height = $height;
+        $this->width = $width;
+        $this->lenght = $lenght;
+        
     }
-
+ 
     // -------------------------------------------------------
     // --- GETS ---
     function getId():int

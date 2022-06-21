@@ -18,6 +18,6 @@ class deleteProduct{
     $entityManager->flush();
     }
     public function redirectAPI(){
-        header('Location: /productList',true,302);
+        header('Location: /',true,302);
     }
 }
